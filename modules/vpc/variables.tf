@@ -18,3 +18,9 @@ variable "web_server_subnets" {
   type        = list(any)
   default     = []
 }
+
+variable "region" {
+  description = "The region"
+  type        = string
+  default     = ""
+}
