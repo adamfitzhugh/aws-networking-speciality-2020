@@ -1,12 +1,15 @@
-variable "region" {
-  description = "Default VPC region"
-  type        = string
-  default     = "eu-west-2"
-}
+# VPC Vars
 variable "primary_cidr" {
   description = "The CIDR block for the VPC"
   type        = string
   default     = "10.0.0.0/16"
+}
+
+# Subnet Vars
+variable "azs" {
+  description = "A list of availability zones names or ids in the region"
+  type        = list(string)
+  default     = ["eu-west-2a", "eu-west-2b"]
 }
 variable "database_subnets" {
   description = "List of database subnets"
