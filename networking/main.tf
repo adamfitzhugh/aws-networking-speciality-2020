@@ -1,8 +1,21 @@
-module "vpc" {
-  source = "../modules/vpc"
+terraform {
+  backend "remote" {
+    organization = "adamfitzhugh-github"
 
-  primary_cidr       = var.primary_cidr
-  azs = var.azs
-  database_subnets   = var.database_subnets
-  web_server_subnets = var.web_server_subnets
+    workspaces {
+      name = "aws-networking-speciality-2020"
+    }
+  }
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = var.region
 }

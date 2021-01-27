@@ -1,3 +1,10 @@
+# main.tf Vars
+variable "region" {
+  description = "Default AWS Region"
+  type    = string
+  default = "eu-west-2"
+}
+
 # VPC Vars
 variable "primary_cidr" {
   description = "The CIDR block for the VPC"
