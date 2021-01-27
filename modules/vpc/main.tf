@@ -33,6 +33,6 @@ resource "aws_subnet" "web_server_subnet" {
 }
 
 resource "aws_security_group" "test_sg" {
-  name        = (var.azs[count.index])"-test-sg"
+  name        = "${var.azs[count.index]}-test-sg"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.main.id
