@@ -3,6 +3,11 @@ variable "primary_cidr" {
   type        = string
   default     = ""
 }
+variable "azs" {
+  description = "The availability zones for the VPC"
+  type        = list(string)
+  default     = []
+}
 variable "database_subnets" {
   description = "List of database subnets"
   type        = list(any)
