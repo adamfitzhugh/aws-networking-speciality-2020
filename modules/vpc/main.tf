@@ -23,11 +23,11 @@ resource "aws_subnet" "database_subnet" {
 # Configure Web Server subnets
 resource "aws_subnet" "web_server_subnet" {
   count             = length(var.web_server_subnets)
-  availability_zone = "${var.azs[count.index]}-test"
+  availability_zone = var.azs[count.index]
   vpc_id            = aws_vpc.main_vpc.id
   cidr_block        = var.web_server_subnets[count.index]
 
   tags = {
-    Name = "Web Server Subnet"
+    Name = "Web Server Subnet-"${var.azs}
   }
 }
