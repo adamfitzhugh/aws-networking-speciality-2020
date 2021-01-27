@@ -1,0 +1,27 @@
+# IDE Files
+*.iml
+/.idea
+todos.md
+
+# Terraform Files
+**/.terraform/*
+**/tfstate-resource
+**/.terraform.tfstate*
+**/private.auto.tfvats
+**/*-private.tfvars
+**/personal.auto-tfvars
+*.tfstate
+*.tfstate.*
+
+# Key Files
+**/keys
+**/*.pem
+**/*-key.json
+
+# Inspec Files
+**/test/**/terraform.json
+**/test/inspec.lock
+**/test/vendor
+
+# Crash log files
+crash.log
