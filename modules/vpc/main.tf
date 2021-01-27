@@ -11,7 +11,7 @@ resource "aws_vpc" "main_vpc" {
 # Configure Database subnets
 resource "aws_subnet" "database_subnet" {
   count             = length(var.database_subnets)
-  availability_zone = length(var.azs)
+  availability_zone = var.azs
   vpc_id            = aws_vpc.main_vpc.id
   cidr_block        = var.database_subnets[count.index]
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "database_subnet" {
 # Configure Web Server subnets
 resource "aws_subnet" "web_server_subnet" {
   count             = length(var.web_server_subnets)
-  availability_zone = length(var.azs)
+  availability_zone = var.azs
   vpc_id            = aws_vpc.main_vpc.id
   cidr_block        = var.web_server_subnets[count.index]
 
