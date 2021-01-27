@@ -16,7 +16,7 @@ resource "aws_subnet" "database_subnet" {
   cidr_block        = var.database_subnets[count.index]
 
   tags = {
-    Name = Database Subnet - ${var.azs[count.index]}
+    Name = Database Subnet - ${var.azs[count.index]},
   }
 }
 
@@ -28,6 +28,6 @@ resource "aws_subnet" "web_server_subnet" {
   cidr_block        = var.web_server_subnets[count.index]
 
   tags = {
-    Name = Web Server Subnet - ${var.azs[count.index]}
+    Name = Web Server Subnet - ${var.azs[count.index]},
   }
 }
