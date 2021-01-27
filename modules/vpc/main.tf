@@ -28,6 +28,11 @@ resource "aws_subnet" "web_server_subnet" {
   cidr_block        = var.web_server_subnets[count.index]
 
   tags = {
-    Name = (var.azs[count.index])"-Web Server Subnet"
+    Name = "Web Server Subnet"
   }
 }
+
+resource "aws_security_group" "test_sg" {
+  name        = (var.azs[count.index])"-test-sg"
+  description = "Allow TLS inbound traffic"
+  vpc_id      = aws_vpc.main.id
