@@ -31,9 +31,3 @@ resource "aws_subnet" "web_server_subnet" {
     Name = "Web Server Subnet"
   }
 }
-
-resource "aws_security_group" "test_sg" {
-  name        = "${var.region}-${var.region}"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main_vpc.id
-}
