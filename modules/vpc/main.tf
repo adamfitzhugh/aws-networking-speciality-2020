@@ -32,13 +32,6 @@ resource "aws_subnet" "web_server_subnet" {
   }
 }
 
-# Configure SG
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main_vpc.id
-}
-
 # Configure NACL
 # Configure Route tables
 # Configure IGW
