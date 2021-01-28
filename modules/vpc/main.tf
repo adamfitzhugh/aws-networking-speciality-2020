@@ -28,11 +28,17 @@ resource "aws_subnet" "web_server_subnet" {
   cidr_block        = var.web_server_subnets[count.index]
 
   tags = {
-    Name = var.azs[count.index] - "Web Server Subnet"
+    Name = "Web Server Subnet"
   }
 }
 
 # Configure SG
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls"
+  description = "Allow TLS inbound traffic"
+  vpc_id      = aws_vpc.main_vpc.id
+}
+
 # Configure NACL
 # Configure Route tables
 # Configure IGW
