@@ -1,6 +1,6 @@
 module "vpc" {
   #source = "../modules/vpc"
-  source = "git::https://github.com/adamfitzhugh/aws-networking-speciality-2020.git"
+  source = "git::https://github.com/adamfitzhugh/aws-terraform-vpc-module.git"
 
   primary_cidr       = var.primary_cidr
   azs = var.azs
