@@ -1,6 +1,6 @@
 module "vpc" {
-  #source = "../modules/vpc"
-  source = "git::https://github.com/adamfitzhugh/aws-networking-speciality-2020.git"
+  source = "../modules/vpc"
+  #source = "git::https://github.com/adamfitzhugh/aws-networking-speciality-2020.git"
 
   primary_cidr       = var.primary_cidr
   azs = var.azs
