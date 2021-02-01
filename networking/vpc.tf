@@ -1,9 +1,8 @@
 module "vpc" {
-  #source = "../modules/vpc"
   source = "git::https://github.com/adamfitzhugh/aws-terraform-vpc-module.git"
 
+  name = "Primary VPC"
   primary_cidr       = var.primary_cidr
   azs = var.azs
-  database_subnets   = var.database_subnets
-  web_server_subnets = var.web_server_subnets
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 }
