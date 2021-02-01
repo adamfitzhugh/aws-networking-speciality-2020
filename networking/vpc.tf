@@ -4,5 +4,5 @@ module "vpc" {
   name = "Primary VPC"
   primary_cidr       = var.primary_cidr
   azs = var.azs
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  private_subnets = var.private_subnets
 }

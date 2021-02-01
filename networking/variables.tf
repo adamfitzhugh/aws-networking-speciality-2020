@@ -22,12 +22,9 @@ variable "azs" {
   description = "A list of availability zones names or ids in the region"
   type        = list(string)
   default     = ["eu-west-2a", "eu-west-2b"]
-<<<<<<< HEAD
-=======
 }
 variable "private_subnets" {
   description = "List of private subnets"
   type        = list(any)
   default     = ["10.0.1.0/24", "10.0.2.0/24"]
->>>>>>> 2460d13c61103189e13282d7b75951a64700314b
 }
