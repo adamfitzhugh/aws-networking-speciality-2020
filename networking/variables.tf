@@ -14,7 +14,7 @@ variable "cidr_block" {
 variable "name" {
   description = "The name of the resource"
   type        = string
-  default     = ""
+  default     = "Primary VPC"
 }
 
 # Subnet Vars
