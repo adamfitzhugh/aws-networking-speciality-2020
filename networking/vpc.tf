@@ -6,3 +6,10 @@ module "vpc" {
   azs = var.azs
   private_subnets = var.private_subnets
 }
+
+# Configure NACL
+# Configure Route tables
+# Configure IGW
+# Configure NGW
+# Configure VPC endpoints
+# VPC Peering
